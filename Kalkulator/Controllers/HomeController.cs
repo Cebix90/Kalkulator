@@ -47,7 +47,13 @@ namespace Kalkulator.Controllers
 
         public IActionResult Calculator(Calculator kalkulator)
         {
-            if (kalkulator.Mark == '+')
+            
+            if(kalkulator.SecondNumber == 0 && kalkulator.Mark == '/')
+            {
+                ViewBag.wynik = "Nie mozna dzielic przez 0";
+                return View();
+            }
+            else if (kalkulator.Mark == '+')
             {
                 kalkulator.Result = kalkulator.FirstNumber + kalkulator.SecondNumber;
             }
@@ -65,7 +71,8 @@ namespace Kalkulator.Controllers
             }
             else
             {
-                
+                ViewBag.wynik = "Brakuje jednej z liczb lub znaku dzialania";
+                return View();
             }
 
             ViewBag.wynik = $"Wynik z dzialania {kalkulator.FirstNumber} {kalkulator.Mark} {kalkulator.SecondNumber} = {kalkulator.Result}";
