@@ -5,13 +5,13 @@
 }
 
 <h1>Kalkulator</h1>
-<p>Wybierz dwie liczby i jeden ze znakow: +, -, *, :</p>
+<p>Wybierz dwie liczby i jeden ze znakow: +, -, *, /</p>
 
 <form action="Calculator">
-    <input type="firstNumber" asp-for="FirstNumber" />First number
-    <input type="mark" asp-for="Mark" />Mark
-    <input type="secondNumber" asp-for="SecondNumber" />Second number
-    <input type="submit" />
+    <p><input type="firstNumber" asp-for="FirstNumber"/> First number</p>
+    <p><input type="secondNumber" asp-for="SecondNumber"/> Second number</p>
+    <p><input type="mark" asp-for="Mark"/> Mark</p>
+    <input type="submit"/>
 </form>
 
 @ViewBag.wynik
